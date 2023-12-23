@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div class="snow"></div>
+    </div>
+    
+    <audio id="myAudio" controls>
+        <source src="mp3.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("myAudio");
+
+            // Bắt sự kiện click trên body
+            document.body.addEventListener("click", function() {
+                audio.play();  // Bắt đầu phát âm thanh khi có sự tương tác
+                // Gỡ bỏ sự kiện click sau khi đã phát âm thanh
+                document.body.removeEventListener("click", arguments.callee);
+            });
+        });
+    </script>
+</body>
+</html>
